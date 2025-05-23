@@ -8,6 +8,8 @@
   </nav>
 </header>
 
+
+
 <!-- Home Section -->
 <section id="home" style="padding: 40px;">
   <h2>About Me</h2>
@@ -17,13 +19,13 @@
 <!-- Skills Section -->
 <section id="skills" style="padding: 40px; background-color: #f9f9f9;">
   <h2>Skills</h2>
-  <ul>
-    <li>Dot Net Framework</li>
-    <li>C#</li>
-    <li>Java</li>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>SQL</li>
+  <button (click)="toggleSkills()">
+    {{ showSkills ? 'Hide Skills' : 'Show Skills' }}
+  </button>
+  <ul *ngIf="showSkills">
+    <li *ngFor="let skill of skills">
+      {{ skill }}
+    </li>
   </ul>
 </section>
 

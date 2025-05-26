@@ -2,12 +2,13 @@
 <header style="background: #333; color: white; padding: 20px; text-align: center;">
   <h1>My Portfolio</h1>
   <nav>
-    <a href="#home" style="margin: 0 10px; color: #00bfff;">Home</a> |
-    <a href="#skills" style="margin: 0 10px; color: #00bfff;">Skills</a> |
-    <a href="#contact" style="margin: 0 10px; color: #00bfff;">Contact</a>
+    <a routerLink="/" routerLinkActive="active">Home</a> |
+    <a routerLink="/skills" routerLinkActive="active">Skills</a> |
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
   </nav>
 </header>
 
+<router-outlet></router-outlet>
 
 
 <!-- Home Section -->
@@ -15,6 +16,12 @@
   <h2>About Me</h2>
   <p>Hello! I'm a backend developer at Locobuzz.</p>
 </section>
+
+<div style="text-align: left; padding: 40px;">
+  <h2>Enter your name:</h2>
+  <input [(ngModel)]="name" placeholder="Your name" />
+  <p *ngIf="name">Hello, {{ name }}!</p>
+</div>
 
 <!-- Skills Section -->
 <section id="skills" style="padding: 40px; background-color: #f9f9f9;">
@@ -39,5 +46,5 @@
 
 <!-- Footer -->
 <footer style="background: #eee; padding: 20px; text-align: center;">
-  © 2025 My Portfolio
+  © 2025 Hrushikesh Zarekar
 </footer>
